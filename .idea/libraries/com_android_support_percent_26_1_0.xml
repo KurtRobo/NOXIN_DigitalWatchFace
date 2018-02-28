@@ -1,8 +1,13 @@
 <component name="libraryTable">
   <library name="com.android.support:percent-26.1.0">
     <CLASSES>
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/percent-26.1.0.aar/326afa587a608c8a18cbd5e03267fad5/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/percent-26.1.0.aar/326afa587a608c8a18cbd5e03267fad5/res" />
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/percent-26.1.0.aar/12c0a47d768fa2344346f4c3a92a1fec/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/percent-26.1.0.aar/12c0a47d768fa2344346f4c3a92a1fec/res" />
+>>>>>>> origin/master
     </CLASSES>
     <JAVADOC />
     <SOURCES>

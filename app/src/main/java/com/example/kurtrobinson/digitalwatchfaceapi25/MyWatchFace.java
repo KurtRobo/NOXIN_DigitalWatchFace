@@ -124,7 +124,7 @@ public class MyWatchFace extends CanvasWatchFaceService {
 
             setWatchFaceStyle(new WatchFaceStyle.Builder(MyWatchFace.this)
                     .setAcceptsTapEvents(true)
-                    .setStatusBarGravity(Gravity.CENTER | 10)
+                    .setStatusBarGravity(Gravity.CENTER| 10)
                     .build());
 
             mCalendar = Calendar.getInstance();
@@ -135,11 +135,11 @@ public class MyWatchFace extends CanvasWatchFaceService {
             // Initializes background.
             mBackgroundPaint = new Paint();
             mBackgroundPaint.setColor(Color.BLACK);
-            mBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bg3);
+            mBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bg2);
 
             // Initializes Watch Face.
             mTextPaint = new Paint();
-            mTextPaint.setTypeface(CUSTOM_TYPEFACE2);
+            mTextPaint.setTypeface(CUSTOM_TYPEFACE3);
             mTextPaint.setAntiAlias(true);
             mTextPaint.setColor(
                     ContextCompat.getColor(getApplicationContext(), R.color.digital_text));
