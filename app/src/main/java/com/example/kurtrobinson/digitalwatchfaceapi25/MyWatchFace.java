@@ -26,6 +26,8 @@ import android.widget.Toast;
 import java.lang.ref.WeakReference;
 import java.util.Calendar;
 import java.util.TimeZone;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -108,6 +110,8 @@ public class MyWatchFace extends CanvasWatchFaceService {
         private boolean mBurnInProtection;
         private boolean mAmbient;
 
+        private int timerCount = 0;
+
         @Override
         public void onCreate(SurfaceHolder holder) {
 
@@ -119,6 +123,7 @@ public class MyWatchFace extends CanvasWatchFaceService {
 
             Typeface CUSTOM_TYPEFACE3 =
                     Typeface.createFromAsset(getAssets(),  "fonts/Targa.ttf");
+
 
             super.onCreate(holder);
 
@@ -135,7 +140,7 @@ public class MyWatchFace extends CanvasWatchFaceService {
             // Initializes background.
             mBackgroundPaint = new Paint();
             mBackgroundPaint.setColor(Color.BLACK);
-            mBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bg3);
+            mBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sonic1);
 
             // Initializes Watch Face.
             mTextPaint = new Paint();
@@ -147,7 +152,11 @@ public class MyWatchFace extends CanvasWatchFaceService {
            // smallTextPaint = new Paint();
            // smallTextPaint = mTextPaint;
 
-        }
+            //Code for sonic
+            timerCount = 1;
+
+    }
+
 
         @Override
         public void onDestroy() {
@@ -218,6 +227,7 @@ public class MyWatchFace extends CanvasWatchFaceService {
         public void onTimeTick() {
             super.onTimeTick();
             invalidate();
+
         }
 
         @Override
@@ -287,6 +297,46 @@ public class MyWatchFace extends CanvasWatchFaceService {
 
            // canvas.drawText(text2, 50, 100, smallTextPaint);
             canvas.drawText(text, mXOffset, mYOffset, mTextPaint);
+
+
+/*
+
+//Sonic code
+            TimerTask tasknew = new TimerTask() {
+                @Override
+                public void run() {*/
+                    System.out.println("draw " + timerCount);
+
+                    switch(timerCount) {
+                        case 1:
+                            mBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sonic1);
+                            break;
+                        case 2:
+                            mBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sonic2);
+                            break;
+                        case 3:
+                            mBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sonic3);
+                            break;
+                        case 4:
+                            mBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sonic4);
+                            break;
+                        case 5:
+                            mBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sonic5);
+                            break;
+                        case 6:
+                            mBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sonic6);
+                            timerCount = 0;
+                            break;
+
+                    }
+
+                    timerCount++;
+/*
+                }
+            };
+            Timer timerObj = new Timer(true);
+            timerObj.scheduleAtFixedRate(tasknew, 5000, 5000);
+*/
         }
 
         private void drawBackground(Canvas canvas) {
