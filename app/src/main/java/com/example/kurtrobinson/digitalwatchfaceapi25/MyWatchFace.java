@@ -135,7 +135,7 @@ public class MyWatchFace extends CanvasWatchFaceService {
             // Initializes background.
             mBackgroundPaint = new Paint();
             mBackgroundPaint.setColor(Color.BLACK);
-            mBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bg2);
+            mBackgroundBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bg3);
 
             // Initializes Watch Face.
             mTextPaint = new Paint();
